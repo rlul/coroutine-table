@@ -4,6 +4,7 @@
 namespace UI
 {
 	constexpr int MAX_COLUMN_LENGTH = 64;
+	constexpr int WINDOW_WIDTH = 800, WINDOW_HEIGHT = 400;
 
 	enum Column_t
 	{

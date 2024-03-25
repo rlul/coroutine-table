@@ -12,7 +12,7 @@ bool UI::Handlers::OnCreate(HWND hwnd, LPCREATESTRUCT lpCreateStruct)
 {
 	g_hTable = CreateWindowEx(0, WC_LISTVIEW, "",
 		WS_CHILD | WS_VISIBLE | WS_BORDER | LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS, 20, 20,
-		740, 280, hwnd, (HMENU)IDI_TABLE, lpCreateStruct->hInstance, NULL);
+		WINDOW_WIDTH - 60, WINDOW_HEIGHT - 120, hwnd, (HMENU)IDI_TABLE, lpCreateStruct->hInstance, NULL);
 
 	if (!g_hTable)
 	{
@@ -29,8 +29,8 @@ bool UI::Handlers::OnCreate(HWND hwnd, LPCREATESTRUCT lpCreateStruct)
 	lvc.cx = 200;
 	lvc.pszText = (LPSTR)"Surname";
 	ListView_InsertColumn(g_hTable, SURNAME, &lvc);
-	lvc.pszText = (LPSTR)"Age";
 	lvc.cx = 50;
+	lvc.pszText = (LPSTR)"Age";
 	ListView_InsertColumn(g_hTable, AGE, &lvc);
 	lvc.cx = 200;
 	lvc.pszText = (LPSTR)"Address";
@@ -39,7 +39,7 @@ bool UI::Handlers::OnCreate(HWND hwnd, LPCREATESTRUCT lpCreateStruct)
 	lvc.pszText = (LPSTR)"Phone Number";
 	ListView_InsertColumn(g_hTable, PHONE_NUMBER, &lvc);
 
-	g_hButtonNext = CreateWindowEx(0, "BUTTON", "Next", WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON, 670, 310, 90, 30, hwnd,
+	g_hButtonNext = CreateWindowEx(0, "BUTTON", "Next", WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON, WINDOW_WIDTH - 130, WINDOW_HEIGHT - 90, 90, 30, hwnd,
 		(HMENU)IDI_BUTTON_NEXT, lpCreateStruct->hInstance, NULL);
 
 	if (!g_hButtonNext)

@@ -48,7 +48,7 @@ void UI::Setup(HINSTANCE instance)
 	RegisterClass(&wc);
 
 	g_hWnd = CreateWindowEx(0, "MainWindow", "coroutine-tables", WS_OVERLAPPED | WS_CAPTION | WS_SYSMENU | WS_MINIMIZEBOX, CW_USEDEFAULT, CW_USEDEFAULT,
-	                            800, 400, HWND_DESKTOP, NULL, instance, NULL);
+			WINDOW_WIDTH, WINDOW_HEIGHT, HWND_DESKTOP, NULL, instance, NULL);
 
 	ShowWindow(g_hWnd, SW_SHOW);
 }
